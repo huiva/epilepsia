@@ -1,0 +1,32 @@
+{
+  "name": "epilepsia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:huiva/epilepsia.git",
+  "author": "Anton Shanyuk <a.shanyuk@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'",
+    "prettier": "./node_modules/.bin/prettier --config .prettierrc.json --write 'src/**/*.ts'",
+    "tsc": "./node_modules/.bin/tsc -p tsconfig.json",
+    "exec": "node ./.dist/index.js",
+    "start": "yarn run tsc && yarn run exec",
+    "pre": "yarn run prettier && yarn run lint"
+  },
+  "dependencies": {
+    "@types/puppeteer": "^1.3.1",
+    "puppeteer": "^1.3.0"
+  },
+  "devDependencies": {
+    "husky": "^1.0.0-rc.2",
+    "prettier": "^1.12.1",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run pre",
+      "pre-push": "yarn run pre"
+    }
+  }
+}
