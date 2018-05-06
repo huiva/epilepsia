@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+# Dist folder
+.dist
+
+# Sensitive configuration
+src/sensitive.ts
+
+# Screenshots folder
+screens
